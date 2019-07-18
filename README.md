@@ -8,7 +8,7 @@ This is part of the Forms Project in The Odin Project’s Ruby on Rails Curricul
       - Normal HTML markup
       - form_tag helper method
       - form_for helper method
-3. Implemantaion of user record editing action.
+3. Implementation of user record editing action.
 4. Proper display of error messages.
 
 ## Getting started
