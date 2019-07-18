@@ -2,6 +2,14 @@
 
 This is part of the Forms Project in The Odin Project’s Ruby on Rails Curriculum. Find it at [here](http://www.theodinproject.com).
 
+## Project Description
+1. Creation of users model.
+2. Implementation of HTML forms using:
+      - Normal HTML markup
+      - form_tag helper method
+      - form_for helper method
+3. Implemantaion of user record editing action.
+4. Proper display of error messages.
 
 ## Getting started
 
