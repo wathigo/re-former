@@ -18,12 +18,25 @@
   <input type="submit" value="Submit" />
 </form> -->
 
-<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:username, "Username") %>
-  <%= text_field_tag(:username) %>
-  <%= label_tag(:email, "Email") %>
-  <%= email_field_tag(:email) %>
-  <%= label_tag(:password, "Password") %>
-  <%= password_field_tag(:password) %>
-  <%= submit_tag("Sign Up") %>
+<%#= form_tag("/users", method: "post") do %>
+  <%#= label_tag(:username, "Username") %>
+  <%#= text_field_tag(:username) %>
+  <%#= label_tag(:email, "Email") %>
+  <%#= email_field_tag(:email) %>
+  <%#= label_tag(:password, "Password") %>
+  <%#= password_field_tag(:password) %>
+  <%#= submit_tag("Sign Up") %>
+<%# end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username, 'Username: ' %>
+  <%= f.text_field :username, placeholder: 'Your user name here' %>
+
+  <%= f.label :email, 'Email: ' %>
+  <%= f.email_field :email, placeholder: 'example@example.com' %>
+
+  <%= f.label :password, 'Password: ' %>
+  <%= f.password_field :password %>
+
+  <%= f.submit 'Sign Up' %>
 <% end %>
