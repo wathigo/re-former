@@ -2,13 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
-  # GET /users.json
   def index
     @users = User.all
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -19,10 +17,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     # @user = User.new(username: params[:username], email: params[:email], password: params[:password])
@@ -35,12 +33,17 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
+    @user = User.find(params[:id])
+    if @user.update(username: params[:user][:username], email: params[:user][:email],
+                     password: params[:user][:password])
+      redirect_to edit_user_path(@user)
+    else
+      render :edit
+    end
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
   end
 
