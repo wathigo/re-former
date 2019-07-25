@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users
   def index
@@ -7,8 +9,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show
-  end
+  def show; end
 
   # GET /users/new
   def new
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(username: params[:user][:username], email: params[:user][:email],
-                     password: params[:user][:password])
+                    password: params[:user][:password])
       redirect_to edit_user_path(@user)
     else
       render :edit
@@ -44,10 +45,10 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  def destroy
-  end
+  def destroy; end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
